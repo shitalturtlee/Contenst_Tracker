@@ -1,0 +1,187 @@
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body{
+    height:100vh;
+    background: linear-gradient(135deg,#050b18,#0a1f44,#001d3d);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    overflow:hidden;
+    color:white;
+}
+
+/* Animated Background */
+body::before{
+    content:"";
+    position:absolute;
+    width:100%;
+    height:100%;
+    background:url('https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+    opacity:0.12;
+    z-index:-2;
+}
+
+body::after{
+    content:"";
+    position:absolute;
+    width:100%;
+    height:100%;
+    background:linear-gradient(to right,#000428,#004e92);
+    opacity:0.5;
+    z-index:-1;
+}
+
+/* Card */
+.container{
+    width:420px;
+    background:rgba(255,255,255,0.08);
+    backdrop-filter:blur(12px);
+    border:1px solid rgba(255,255,255,0.15);
+    border-radius:22px;
+    padding:30px;
+    box-shadow:0 0 25px rgba(0,150,255,0.3);
+    animation:fadeIn 1.5s ease;
+}
+
+/* Top Right Username */
+.top-user{
+    text-align:right;
+    font-size:20px;
+    font-weight:bold;
+    color:#4fc3ff;
+    transition:0.4s;
+}
+
+.top-user:hover{
+    transform:scale(1.1);
+    text-shadow:0 0 15px #4fc3ff;
+}
+
+.subtitle{
+    margin-top:8px;
+    font-size:14px;
+    text-align:right;
+    color:#ddd;
+}
+
+h2{
+    margin-top:25px;
+    margin-bottom:18px;
+    font-size:24px;
+    text-align:center;
+    transition:0.4s;
+}
+
+h2:hover{
+    transform:scale(1.08);
+    color:#4fc3ff;
+}
+
+/* Input Groups */
+.input-box{
+    margin:18px 0;
+    position:relative;
+}
+
+.input-box span{
+    position:absolute;
+    left:12px;
+    top:11px;
+    font-size:18px;
+}
+
+.input-box input{
+    width:100%;
+    padding:12px 12px 12px 42px;
+    border:none;
+    outline:none;
+    border-radius:12px;
+    background:rgba(255,255,255,0.12);
+    color:white;
+    font-size:16px;
+    transition:0.4s;
+}
+
+.input-box input:focus,
+.input-box input:hover{
+    transform:scale(1.03);
+    box-shadow:0 0 15px #2196f3;
+}
+
+/* Button */
+button{
+    width:100%;
+    padding:13px;
+    margin-top:18px;
+    border:none;
+    border-radius:14px;
+    background:linear-gradient(90deg,#2196f3,#00e5ff);
+    color:white;
+    font-size:18px;
+    cursor:pointer;
+    font-weight:bold;
+    transition:0.4s;
+}
+
+button:hover{
+    transform:scale(1.05);
+    box-shadow:0 0 20px #00bcd4;
+}
+
+/* Theme Toggle */
+.theme-toggle{
+    position:absolute;
+    top:20px;
+    left:20px;
+    background:#111;
+    color:white;
+    border:none;
+    padding:10px 14px;
+    border-radius:50%;
+    cursor:pointer;
+    font-size:18px;
+    transition:0.3s;
+}
+
+.theme-toggle:hover{
+    transform:rotate(180deg) scale(1.1);
+}
+
+/* Light Theme */
+.light{
+    background:linear-gradient(135deg,#dbeafe,#93c5fd,#60a5fa);
+    color:#111;
+}
+
+.light .container{
+    background:rgba(255,255,255,0.65);
+    color:#111;
+}
+
+.light input{
+    color:#111 !important;
+}
+
+.light .top-user{
+    color:#003cff;
+}
+
+/* Animation */
+@keyframes fadeIn{
+    from{
+        opacity:0;
+        transform:translateY(40px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+
